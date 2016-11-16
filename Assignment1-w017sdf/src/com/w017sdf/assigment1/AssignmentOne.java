@@ -1,5 +1,6 @@
 package com.w017sdf.assigment1;
-//Experimental merging comment
+//Experimental merging comment.
+//Added a period
 import com.jit.assignment1checker.Assignment1Tasks;
 import com.jit.assignment1checker.Checker;
 
