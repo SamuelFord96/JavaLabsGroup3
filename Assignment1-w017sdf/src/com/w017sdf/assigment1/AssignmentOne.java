@@ -13,7 +13,7 @@ public class AssignmentOne implements Assignment1Tasks {
 		Checker.checkSumOfDigits(myAssignment);
 		Checker.checkMonthsSaved(myAssignment);
 		Checker.checkFindAverage(myAssignment);
-
+// Comment
 		
 		}
 	
