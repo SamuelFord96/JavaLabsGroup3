@@ -9,11 +9,8 @@
     tools:context="com.example.gradegrubber.MainActivity" >
 
     <TextView
-        android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="@string/titleString"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:text="@string/hello_world" />
 
 </RelativeLayout>
