@@ -1,5 +1,5 @@
 package com.example.gradegrubber;
-//Class for object "Course"
+//Class for "Course" object 
 public class Course {
 
 }
