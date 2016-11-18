@@ -1,5 +1,4 @@
 package com.example.gradegrubber;
-//hi
 
 import android.app.Activity;
 import android.os.Bundle;
