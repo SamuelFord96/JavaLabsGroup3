@@ -9,11 +9,49 @@
     tools:context="com.example.gradegrubber.MainActivity" >
 
     <TextView
-        android:id="@+id/txtTitleGrubberHubber"
+        android:id="@+id/tvTitleGrubberHubber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="@string/titleGrubberHubber"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tvTotalGPA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/tvTitleGrubberHubber"
+        android:layout_toRightOf="@+id/tvTitleGrubberHubber"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/tvYourCourses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:layout_below="@+id/tvTitleGrubberHubber"
+        android:layout_marginTop="10dp"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ListView
+        android:id="@+id/lstYourCourses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnAddCourse"
+        android:layout_alignLeft="@+id/tvYourCourses"
+        android:layout_below="@+id/tvYourCourses" >
+
+    </ListView>
+
+    <Button
+        android:id="@+id/btnAddCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:layout_toRightOf="@+id/tvYourCourses"
+        android:text="Button" />
 
 </RelativeLayout>

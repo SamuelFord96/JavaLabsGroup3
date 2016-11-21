@@ -9,7 +9,7 @@
     tools:context="com.example.gradegrubber.Course" >
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvGradeInClass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -18,12 +18,66 @@
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/tvCourseTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView2"
+        android:layout_alignTop="@+id/tvGradeInClass"
         android:layout_centerHorizontal="true"
         android:text="Large Text"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tvAssignmentType1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCourseTitle"
+        android:layout_marginTop="14dp"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ListView
+        android:id="@+id/lstAssignmentType1"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@+id/tvAssignmentType1"
+        android:layout_below="@+id/tvAssignmentType1" >
+
+    </ListView>
+
+    <TextView
+        android:id="@+id/tvAssignmentType2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lstAssignmentType1"
+        android:layout_below="@+id/lstAssignmentType1"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ListView
+        android:id="@+id/lstAssignmentType2"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@+id/tvAssignmentType2"
+        android:layout_below="@+id/tvAssignmentType2" >
+
+    </ListView>
+
+    <TextView
+        android:id="@+id/tvAssignmentType3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lstAssignmentType2"
+        android:layout_below="@+id/lstAssignmentType2"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ListView
+        android:id="@+id/lstAssignmentType3"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@+id/tvAssignmentType3"
+        android:layout_below="@+id/tvAssignmentType3" >
+
+    </ListView>
 
 </RelativeLayout>
