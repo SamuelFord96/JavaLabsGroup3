@@ -39,7 +39,7 @@
         android:id="@+id/lstYourCourses"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/btnAddCourse"
+        android:layout_above="@+id/btnAddCourse"
         android:layout_alignLeft="@+id/tvYourCourses"
         android:layout_below="@+id/tvYourCourses" >
 
