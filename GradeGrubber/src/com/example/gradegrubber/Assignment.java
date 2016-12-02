@@ -4,6 +4,6 @@ package com.example.gradegrubber;
  * 	then we will funnel all that data into the course activity to be displayed
  * 
  */
-public class Assingment {
+public class Assignment {
 
 }
