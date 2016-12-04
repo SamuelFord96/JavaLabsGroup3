@@ -5,6 +5,9 @@ package com.example.gradegrubber;
  * 
  */
 public class Assignment {
+	private String AssignmentName;
+	private double scoreAchieved;
+	private double maxPoints;
 
 }
 // heres a change
