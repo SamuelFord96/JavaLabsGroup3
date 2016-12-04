@@ -1,0 +1,94 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.mis4800.group3.checkbook_android.MainActivity" >
+
+    <EditText
+        android:id="@+id/txtAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:layout_below="@+id/txtDescription"
+        android:layout_marginTop="15dp"
+        android:ems="6"
+        android:hint="@string/amountHint"
+        android:inputType="numberSigned" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/txtAmount"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentTop="false"
+        android:layout_toRightOf="@id/txtAmount"
+        android:text="@string/add" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/btnAdd"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="67dp"
+        android:text="@string/delete"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tvBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/currentbalance"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ListView
+        android:id="@+id/lstTransactions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvBalance"
+        android:layout_below="@id/txtAmount" >
+
+    </ListView>
+
+    <EditText
+        android:id="@+id/txtTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtAmount"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:hint="@string/tohint" />
+
+    <EditText
+        android:id="@+id/txtDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/txtTo"
+        android:layout_alignBottom="@+id/btnAdd"
+        android:layout_toRightOf="@id/txtTo"
+        android:ems="10"
+        android:hint="@string/datehint" />
+
+    <EditText
+        android:id="@+id/txtDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="false"
+        android:layout_below="@id/txtTo"
+        android:ems="10"
+        android:hint="@string/memoHint"
+        android:width="300dp" />
+
+</RelativeLayout>
