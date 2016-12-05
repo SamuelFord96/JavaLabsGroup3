@@ -81,7 +81,7 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 	@Override
 	public void onItemClick(AdapterView<?> listview, View itemview, int itemposition, long itemid) {
 		// TODO Auto-generated method stub
-		myself.getCourses().get(itemposition);
+		Course curcourse = myself.getCourses().get(itemposition);
 		tappedposition = itemposition;
 		Intent courseActivity = new Intent(MainActivity.this, Course.class);
 		startActivity (courseActivity);
