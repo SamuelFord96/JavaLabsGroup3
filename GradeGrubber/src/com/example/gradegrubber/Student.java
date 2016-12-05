@@ -48,7 +48,5 @@ public class Student {
 	public List<Course> getMyCourses() {
 		return myCourses;
 	}
-				
-	}
 
 }
