@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="false"
-        android:layout_below="@+id/txtAddCourses"
+        android:layout_below="@id/txtAddCourseName"
         android:layout_marginTop="10dp"
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -34,26 +34,27 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/tvYourCourses"
         android:layout_below="@+id/tvYourCourses" >
-
     </ListView>
-
-    <EditText
-        android:id="@+id/txtAddCourses"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvTitleGrubberHubber"
-        android:ems="10" >
-
-        <requestFocus />
-    </EditText>
 
     <Button
         android:id="@+id/btnAddCourse"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@id/txtAddCourses"
-        android:layout_toRightOf="@+id/txtAddCourses"
+        android:layout_below="@id/tvTitleGrubberHubber"
+        android:layout_toRightOf="@id/txtAddCourseName"
         android:text="Button" />
+
+    <EditText
+        android:id="@+id/txtAddCourseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnAddCourse"
+        android:layout_alignBottom="@+id/btnAddCourse"
+        android:layout_alignParentLeft="true"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>

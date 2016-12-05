@@ -4,13 +4,34 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements OnClickListener{
+	Button btnAddCourse;
+	TextView tvTitleGrubberHubber, tvYourCourses;
+	EditText txtAddCourseName;
+	ListView lstYourCourses;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		tvTitleGrubberHubber = (TextView) findViewById(R.id.tvTitleGrubberHubber);
+		tvYourCourses = (TextView) findViewById(R.id.tvYourCourses);
+		
+		txtAddCourseName = (EditText) findViewById(R.id.txtAddCourseName);
+		
+		btnAddCourse = (Button) findViewById(R.id.btnAddCourse);
+		
+		lstYourCourses = (ListView) findViewById(R.id.lstYourCourses);
+		
+		btnAddCourse.setOnClickListener(this);
 	}
 
 	@Override
@@ -30,5 +51,11 @@ public class MainActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		
 	}
 }
