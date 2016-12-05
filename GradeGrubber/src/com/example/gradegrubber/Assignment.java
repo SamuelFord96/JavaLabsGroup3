@@ -14,10 +14,10 @@ public class Assignment {
 	private double maxPoints;
 	private double extraCredit;
 	
-	public List<Assignment> Assignment; 
+	public ArrayList<Assignment> Assignment; 
 	
 	
-	public List<Assignment> getAssignment() {
+	public ArrayList<Assignment> getAssignment() {
 		return Assignment;
 	}
 	
