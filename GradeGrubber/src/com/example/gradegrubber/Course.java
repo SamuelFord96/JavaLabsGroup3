@@ -1,5 +1,6 @@
 package com.example.gradegrubber;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
@@ -10,6 +11,19 @@ import android.view.MenuItem;
 public class Course extends Activity {
 	private String courseName;
 	private List<Assignment> myAssignments;
+
+	/**
+	 * @param courseName
+	 * @param myAssignments
+	 */
+	public Course(String courseName) {
+		super();
+		this.courseName = courseName;
+		this.myAssignments = new ArrayList<Assignment>();
+	}
+	public void addAssignment(){
+		
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
