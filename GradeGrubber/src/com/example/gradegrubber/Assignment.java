@@ -8,6 +8,41 @@ public class Assignment {
 	private String AssignmentName;
 	private double scoreAchieved;
 	private double maxPoints;
+	private double extraCredit;
+	/**
+	 * @param assignmentName
+	 * @param scoreAchieved
+	 * @param maxPoints
+	 */
+	public Assignment(String assignmentName, double scoreAchieved, double maxPoints) {
+		super();
+		AssignmentName = assignmentName;
+		this.scoreAchieved = scoreAchieved;
+		this.maxPoints = maxPoints;
+		this.extraCredit = extraCredit;
+	}
+	public String getAssignmentName() {
+		return AssignmentName;
+	}
+	public void setAssignmentName(String assignmentName) {
+		AssignmentName = assignmentName;
+	}
+	public double getScoreAchieved() {
+		return scoreAchieved;
+	}
+	public void setScoreAchieved(double scoreAchieved) {
+		this.scoreAchieved = scoreAchieved;
+	}
+	public double getMaxPoints() {
+		return maxPoints;
+	}
+	public void setMaxPoints(double maxPoints) {
+		this.maxPoints = maxPoints;
+	}
+	
+	public double calculateGrade(double maxPoints, double scoreAchieved, double extraCredit){
+		return (scoreAchieved + extraCredit)/maxPoints;
+		
+	}
 
 }
-// heres a change
