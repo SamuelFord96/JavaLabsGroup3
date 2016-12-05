@@ -3,23 +3,48 @@ package com.example.gradegrubber;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.gradegrubber.R;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class Course extends Activity {
 	private String courseName;
 	private List<Assignment> myAssignments;
 	
-	Button buttonAddAssingment;
+	//Declare button
+	Button buttonAddAssignment;
+	//Declare Edit Texts
 	EditText maxPoints, pointsAchieved, addAssingmentName;
-	TextView tvclassGrade, tvCourseTitle;
-	
+	//Declare Text views
+	TextView classGrade, tvCourseTitle;
+	//Declare List View
+	ListView lstAssignmentType1;
 
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_course);
+		
+		buttonAddAssignment = (Button) findViewById(R.id.buttonAddAssingment);
+		//Declare Edit Text and set their value
+		maxPoints = (EditText) findViewById(R.id.maxPoints);
+		pointsAchieved = (EditText) findViewById(R.id.pointsAchieved);
+		addAssingmentName = (EditText) findViewById(R.id.addAssingmentName);
+		//Declare Text view and set their values
+		classGrade = (TextView) findViewById(R.id.classGrade);
+		tvCourseTitle = (TextView) findViewById(R.id.tvCourseTitle);
+		//
+		lstAssignmentType1 = (ListView) findViewById(R.id.lstAssignmentType1);	
+		
+	}
+	
 	/**
 	 * @param courseName
 	 * @param myAssignments
@@ -33,11 +58,7 @@ public class Course extends Activity {
 		
 	}
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_course);
-	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
