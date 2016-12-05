@@ -70,7 +70,18 @@ public class Course extends Activity implements OnClickListener {
 		
 	}
 
-	
+	public void onClick(View v) {
+		switch (v.getId()){
+		case R.id.buttonAddAssingment:
+			double pointsAchievedDouble = Double.parseDouble(pointsAchieved.getText().toString());
+			double maxPointsDouble = Double.parseDouble(maxPoints.getText().toString());
+			Assignment newAssignment = new Assignment(addAssingmentName.getText().toString(), pointsAchievedDouble, maxPointsDouble);
+		// If add button was clicked use transactions.add to add to a transaction
+			if (buttonAddAssignment.getText().equals("Add")){
+				assingment.addAssignment(newAssignment);
+			}
+		}
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
