@@ -26,9 +26,9 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		myself = new Student("Whoever");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		myself = new Student("Whoever");
 		
 		tvTitleGrubberHubber = (TextView) findViewById(R.id.tvTitleGrubberHubber);
 		tvYourCourses = (TextView) findViewById(R.id.tvYourCourses);

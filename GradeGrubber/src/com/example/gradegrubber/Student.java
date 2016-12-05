@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class Student {
 	private String myName;
-	private List<Course> myCourses;
+	public ArrayList<Course> myCourses;
 	/**
 	 * @param myName
 	 */
@@ -45,7 +45,7 @@ public class Student {
 	/**
 	 * @return the myCourses
 	 */
-	public List<Course> getCourses() {
+	public ArrayList<Course> getCourses() {
 		return myCourses;
 	}
 
