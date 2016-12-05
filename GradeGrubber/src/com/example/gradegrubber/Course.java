@@ -67,7 +67,7 @@ public class Course extends Activity implements OnClickListener {
 				double maxPointsDouble = Double.parseDouble(maxPoints.getText().toString());
 				Assignment newAssignment = new Assignment(addAssingmentName.getText().toString(), pointsAchievedDouble, maxPointsDouble);
 				// If add button was clicked use transactions.add to add to a transaction
-				if (buttonAddAssingment.getText().equals("Add")){
+				if (buttonAddAssignment.getText().equals("Add")){
 					Assignment.addAssignment(assingment);
 					// Else update the amount using transactions.set
 					} else {
