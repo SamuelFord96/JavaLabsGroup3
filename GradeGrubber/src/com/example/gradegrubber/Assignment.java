@@ -3,6 +3,7 @@ package com.example.gradegrubber;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.mis4800.group3.checkbook_android.model.Transaction;
 
 /* This is a class that we will use to keep track of all the assingments that students add, as well as the points that each assingment has
  * 	then we will funnel all that data into the course activity to be displayed
@@ -58,7 +59,7 @@ public class Assignment {
 		return (scoreAchieved + extraCredit)/maxPoints;
 		
 	}
-	public void addAssignment(Assignment newAssign) {
+	public static void addAssignment(Assignment newAssign) {
 		Assignment.add(newAssign);
 		
 	}

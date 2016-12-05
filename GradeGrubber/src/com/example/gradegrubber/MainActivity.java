@@ -43,9 +43,8 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 		lstYourCourses.setAdapter(courseAdapter);
 		//btnAddCourse.setOnClickListener(this);
 		lstYourCourses.setOnItemClickListener(this);
-		
 	}
-	private int tappedposition = -1;
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -72,12 +71,7 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 		case R.id.btnAddCourse:
 			Course newCourse = new Course(txtAddCourseName.getText().toString());
 			myself.addCourse(newCourse);
-			break;
-		case R.id.btnDeleteCourse:
-			if(tappedposition < 0) return;
-			myself.deleteCourse(tappedposition);
 		}
-		courseAdapter.notifyDataSetChanged();
 	}
 
 	@Override
