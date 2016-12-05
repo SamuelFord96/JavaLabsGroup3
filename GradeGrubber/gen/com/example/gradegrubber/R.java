@@ -28,7 +28,7 @@ public final class R {
         public static final int action_settings=0x7f09000d;
         public static final int addAssingmentName=0x7f090004;
         public static final int btnAddCourse=0x7f09000b;
-        public static final int button1=0x7f09000c;
+        public static final int btnDeleteCourse=0x7f09000c;
         public static final int buttonAddAssingment=0x7f090001;
         public static final int classGrade=0x7f090006;
         public static final int lstAssignmentType1=0x7f090000;
@@ -52,9 +52,11 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f060002;
         public static final int actualPointsAchieved=0x7f06000b;
+        public static final int addCourse=0x7f06000e;
         public static final int app_name=0x7f060000;
         public static final int assingmentName=0x7f060007;
         public static final int btnAddAssingment=0x7f06000c;
+        public static final int deleteCourse=0x7f06000d;
         public static final int gradeglow=0x7f060005;
         public static final int hello_world=0x7f060001;
         public static final int maxPoints=0x7f06000a;

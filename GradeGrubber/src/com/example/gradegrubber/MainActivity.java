@@ -15,7 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener, OnItemClickListener{
-	Button btnAddCourse;
+	Button btnAddCourse, btnDeleteCourse;
 	TextView tvTitleGrubberHubber, tvYourCourses;
 	EditText txtAddCourseName;
 	ListView lstYourCourses;
@@ -35,6 +35,7 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 		txtAddCourseName = (EditText) findViewById(R.id.txtAddCourseName);
 		
 		btnAddCourse = (Button) findViewById(R.id.btnAddCourse);
+		btnDeleteCourse = (Button) findViewById(R.id.btnDeleteCourse);
 		
 		lstYourCourses = (ListView) findViewById(R.id.lstYourCourses);
 		courseAdapter = new ArrayAdapter<Course>(this, android.R.layout.simple_list_item_1,
@@ -67,6 +68,10 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()){
+		case R.id.btnAddCourse:
+			Course newCourse = new Course(txtAddCourseName.getText().toString());
+			myself.addCourse(newCourse);
+		}
 	}
 
 	@Override

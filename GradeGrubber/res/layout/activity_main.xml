@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tvTitleGrubberHubber"
         android:layout_toRightOf="@id/txtAddCourseName"
-        android:text="Button" />
+        android:text="@string/addCourse" />
 
     <EditText
         android:id="@+id/txtAddCourseName"
@@ -58,12 +58,12 @@
     </EditText>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btnDeleteCourse"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/btnAddCourse"
+        android:layout_alignBottom="@id/btnAddCourse"
         android:layout_toRightOf="@+id/btnAddCourse"
-        android:text="Button" />
+        android:text="@string/deleteCourse" />
 
 </RelativeLayout>

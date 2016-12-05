@@ -14,5 +14,7 @@
     <string name="maxPoints">Max Pts.</string>
     <string name="actualPointsAchieved">Your Pts.</string>
     <string name="btnAddAssingment">Add</string>
+    <string name="deleteCourse">"Delete "</string>
+    <string name="addCourse">Add</string>
 
 </resources>
