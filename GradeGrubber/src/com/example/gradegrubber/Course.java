@@ -59,12 +59,18 @@ public class Course extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()){
 		case R.id.buttonAddAssingment:
-			double pointsAchievedDouble = Double.parseDouble(pointsAchieved.getText().toString());
-			double maxPointsDouble = Double.parseDouble(maxPoints.getText().toString());
-			Assignment newAssignment = new Assignment(addAssingmentName.getText().toString(), pointsAchievedDouble, maxPointsDouble);
-		// If add button was clicked use transactions.add to add to a transaction
-			if (buttonAddAssignment.getText().equals("Add")){
-				assingment.addAssignment(newAssignment);
+			if (pointsAchieved.getText().toString().equals("")) {return;
+			//parse into double from string
+			}else {
+				double pointsAchievedDouble = Double.parseDouble(pointsAchieved.getText().toString());
+				double maxPointsDouble = Double.parseDouble(maxPoints.getText().toString());
+				Assignment newAssignment = new Assignment(addAssingmentName.getText().toString(), pointsAchievedDouble, maxPointsDouble);
+				 If add button was clicked use transactions.add to add to a transaction
+				if (buttonAddAssignment.getText().equals("Add")){
+					Assignment.addAssignment(assingment);
+					 Else update the amount using transactions.set
+					} else {
+						mycheckbook.updateTransaction(tappedposition, newtransaction);
 			}
 		}
 	}
