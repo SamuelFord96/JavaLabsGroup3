@@ -78,7 +78,7 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 	}
 
 	@Override
-	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+	public void onItemClick(AdapterView<?> listview, View itemview, int itemposition, long itemid) {
 		// TODO Auto-generated method stub
 		
 	}
