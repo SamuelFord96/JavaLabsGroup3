@@ -21,9 +21,11 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 	ListView lstYourCourses;
 	
 	ArrayAdapter<Course> courseAdapter;
+	Student myself;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		myself = new Student("Whoever");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
@@ -35,8 +37,10 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 		btnAddCourse = (Button) findViewById(R.id.btnAddCourse);
 		
 		lstYourCourses = (ListView) findViewById(R.id.lstYourCourses);
-		
-		btnAddCourse.setOnClickListener(this);
+		courseAdapter = new ArrayAdapter<Course>(this, android.R.layout.simple_list_item_1,
+				myself.getCourses());
+		lstYourCourses.setAdapter(courseAdapter);
+		//btnAddCourse.setOnClickListener(this);
 		lstYourCourses.setOnItemClickListener(this);
 	}
 
@@ -62,7 +66,7 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		
+		switch (v.getId()){
 	}
 
 	@Override

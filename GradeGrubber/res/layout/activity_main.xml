@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="false"
-        android:layout_below="@id/txtAddCourseName"
+        android:layout_below="@+id/txtAddCourseName"
         android:layout_marginTop="10dp"
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -47,7 +47,7 @@
 
     <EditText
         android:id="@+id/txtAddCourseName"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/btnAddCourse"
         android:layout_alignBottom="@+id/btnAddCourse"
@@ -56,5 +56,14 @@
 
         <requestFocus />
     </EditText>
+
+    <Button
+        android:id="@+id/button1"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btnAddCourse"
+        android:layout_toRightOf="@+id/btnAddCourse"
+        android:text="Button" />
 
 </RelativeLayout>

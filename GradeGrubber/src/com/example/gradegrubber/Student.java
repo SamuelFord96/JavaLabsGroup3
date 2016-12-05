@@ -45,7 +45,7 @@ public class Student {
 	/**
 	 * @return the myCourses
 	 */
-	public List<Course> getMyCourses() {
+	public List<Course> getCourses() {
 		return myCourses;
 	}
 
