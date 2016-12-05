@@ -6,16 +6,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class MainActivity extends Activity implements OnClickListener{
+public class MainActivity extends Activity implements OnClickListener, OnItemClickListener{
 	Button btnAddCourse;
 	TextView tvTitleGrubberHubber, tvYourCourses;
 	EditText txtAddCourseName;
 	ListView lstYourCourses;
+	
+	ArrayAdapter<Course> courseAdapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +37,7 @@ public class MainActivity extends Activity implements OnClickListener{
 		lstYourCourses = (ListView) findViewById(R.id.lstYourCourses);
 		
 		btnAddCourse.setOnClickListener(this);
+		lstYourCourses.setOnItemClickListener(this);
 	}
 
 	@Override
@@ -55,6 +61,12 @@ public class MainActivity extends Activity implements OnClickListener{
 
 	@Override
 	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		// TODO Auto-generated method stub
 		
 	}
