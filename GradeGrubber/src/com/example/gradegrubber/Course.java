@@ -1,22 +1,32 @@
 package com.example.gradegrubber;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.example.gradegrubber.R;
+import com.mis4800.group3.checkbook_android.model.Transaction;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class Course extends Activity {
+
+
+public class Course extends Activity implements OnClickListener {
 	private String courseName;
 	private List<Assignment> myAssignments;
+	private int tappedposition = -1;
+	ArrayAdapter<Assignment> adapter;
+	Assignment assingment;
 	
 	//Declare button
 	Button buttonAddAssignment;
@@ -33,17 +43,39 @@ public class Course extends Activity {
 		setContentView(R.layout.activity_course);
 		
 		buttonAddAssignment = (Button) findViewById(R.id.buttonAddAssingment);
-		//Declare Edit Text and set their value
+		//Set their value
 		maxPoints = (EditText) findViewById(R.id.maxPoints);
 		pointsAchieved = (EditText) findViewById(R.id.pointsAchieved);
 		addAssingmentName = (EditText) findViewById(R.id.addAssingmentName);
-		//Declare Text view and set their values
+		//Set their values
 		classGrade = (TextView) findViewById(R.id.classGrade);
 		tvCourseTitle = (TextView) findViewById(R.id.tvCourseTitle);
-		//
-		lstAssignmentType1 = (ListView) findViewById(R.id.lstAssignmentType1);	
+		//Set their value
+		lstAssignmentType1 = (ListView) findViewById(R.id.lstAssignmentType1);
+		
+		buttonAddAssignment.setOnClickListener(this);
 		
 	}
+	
+	public void onClick(View v) {
+		switch (v.getId()){
+		case R.id.buttonAddAssingment:
+			if (pointsAchieved.getText().toString().equals("")) {return;
+			//parse into double from string
+			}else {
+				double pointsAchievedDouble = Double.parseDouble(pointsAchieved.getText().toString());
+				double maxPointsDouble = Double.parseDouble(maxPoints.getText().toString());
+				Assignment newAssignment = new Assignment(addAssingmentName.getText().toString(), pointsAchievedDouble, maxPointsDouble);
+				// If add button was clicked use transactions.add to add to a transaction
+				if (buttonAddAssingment.getText().equals("Add")){
+					Assignment.addAssignment(assingment);
+					// Else update the amount using transactions.set
+					} else {
+						mycheckbook.updateTransaction(tappedposition, newtransaction);
+			}
+		}
+	}
+	
 	
 	/**
 	 * @param courseName
@@ -72,6 +104,8 @@ public class Course extends Activity {
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
+		
+	
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
 			return true;
