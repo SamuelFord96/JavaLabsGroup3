@@ -35,7 +35,7 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 		txtAddCourseName = (EditText) findViewById(R.id.txtAddCourseName);
 		
 		btnAddCourse = (Button) findViewById(R.id.btnAddCourse);
-		btnDeleteCourse = (Button) findViewById(R.id.btnDeleteCourse);
+		
 		
 		lstYourCourses = (ListView) findViewById(R.id.lstYourCourses);
 		courseAdapter = new ArrayAdapter<Course>(this, android.R.layout.simple_list_item_1,
@@ -73,9 +73,6 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 			Course newCourse = new Course(txtAddCourseName.getText().toString());
 			myself.addCourse(newCourse);
 			break;
-		case R.id.btnDeleteCourse:
-			if(tappedposition < 0) return;
-			myself.deleteCourse(tappedposition);
 		}
 		courseAdapter.notifyDataSetChanged();
 	}
