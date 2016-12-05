@@ -8,40 +8,72 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.gradegrubber.Course" >
 
-    <TextView
-        android:id="@+id/tvGradeInClass"
+    <ListView
+        android:id="@+id/lstAssignmentType1"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/buttonAddAssingment" >
+    </ListView>
+
+    <Button
+        android:id="@+id/buttonAddAssingment"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="65dp"
+        android:layout_height="105dp"
+        android:layout_alignBottom="@+id/maxPoints"
+        android:layout_alignParentRight="true"
+        android:text="@string/btnAddAssingment" />
+
+    <EditText
+        android:id="@+id/maxPoints"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/pointsAchieved"
+        android:layout_alignBottom="@+id/pointsAchieved"
+        android:layout_alignRight="@+id/addAssingmentName"
+        android:ems="10"
+        android:hint="@string/maxPoints" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/pointsAchieved"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/addAssingmentName"
+        android:layout_below="@+id/addAssingmentName"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="@string/actualPointsAchieved" />
+
+    <EditText
+        android:id="@+id/addAssingmentName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="21dp"
-        android:text="Small Text"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:layout_alignLeft="@+id/lstAssignmentType1"
+        android:layout_below="@+id/tvCourseTitle"
+        android:ems="10"
+        android:hint="@string/assingmentName" />
 
     <TextView
         android:id="@+id/tvCourseTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/tvGradeInClass"
-        android:layout_centerHorizontal="true"
+        android:layout_toLeftOf="@+id/maxPoints"
         android:text="Large Text"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/tvAssignmentType1"
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvCourseTitle"
-        android:layout_marginTop="14dp"
-        android:text="Medium Text"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <ListView
-        android:id="@+id/lstAssignmentType1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tvAssignmentType1"
-        android:layout_below="@+id/tvAssignmentType1" >
-
-    </ListView>
+        android:layout_alignBaseline="@+id/tvCourseTitle"
+        android:layout_alignBottom="@+id/tvCourseTitle"
+        android:layout_alignRight="@+id/addAssingmentName"
+        android:layout_marginRight="16dp"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </RelativeLayout>

@@ -8,5 +8,11 @@
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="gradeglow">Grade Glow</string>
     <string name="title_activity_course">Course</string>
+    <string name="assingmentName">Assingment Name</string>
+    <string name="pointsAchieved">Points Achieved</string>
+    <string name="yourPoints">Your Points</string>
+    <string name="maxPoints">Max Pts.</string>
+    <string name="actualPointsAchieved">Your Pts.</string>
+    <string name="btnAddAssingment">Add</string>
 
 </resources>
