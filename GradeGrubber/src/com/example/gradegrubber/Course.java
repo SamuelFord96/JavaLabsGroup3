@@ -33,5 +33,5 @@ public class Course {
 	public String toString() {
 		return "Course [cname=" + cname + "]";
 	}
-	
+
 }
