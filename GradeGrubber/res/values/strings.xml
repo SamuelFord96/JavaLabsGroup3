@@ -16,5 +16,7 @@
     <string name="btnAddAssingment">Add</string>
     <string name="deleteCourse">"Delete "</string>
     <string name="addCourse">Add</string>
+    <string name="btnDelete">Delete</string>
+    <string name="bntUpdate">Update</string>
 
 </resources>

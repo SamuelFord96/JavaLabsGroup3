@@ -25,19 +25,21 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f09000c;
+        public static final int action_settings=0x7f09000e;
         public static final int addAssingmentName=0x7f090004;
-        public static final int btnAddCourse=0x7f09000b;
+        public static final int btnAddCourse=0x7f09000d;
+        public static final int btnDelete=0x7f090007;
+        public static final int btnUpdate=0x7f090008;
         public static final int buttonAddAssingment=0x7f090001;
         public static final int classGrade=0x7f090006;
         public static final int lstAssignmentType1=0x7f090000;
-        public static final int lstYourCourses=0x7f09000a;
+        public static final int lstYourCourses=0x7f09000c;
         public static final int maxPoints=0x7f090002;
         public static final int pointsAchieved=0x7f090003;
         public static final int tvCourseTitle=0x7f090005;
-        public static final int tvTitleGrubberHubber=0x7f090007;
-        public static final int tvYourCourses=0x7f090008;
-        public static final int txtAddCourseName=0x7f090009;
+        public static final int tvTitleGrubberHubber=0x7f090009;
+        public static final int tvYourCourses=0x7f09000a;
+        public static final int txtAddCourseName=0x7f09000b;
     }
     public static final class layout {
         public static final int activity_course=0x7f030000;
@@ -54,7 +56,9 @@ public final class R {
         public static final int addCourse=0x7f06000e;
         public static final int app_name=0x7f060000;
         public static final int assingmentName=0x7f060007;
+        public static final int bntUpdate=0x7f060010;
         public static final int btnAddAssingment=0x7f06000c;
+        public static final int btnDelete=0x7f06000f;
         public static final int deleteCourse=0x7f06000d;
         public static final int gradeglow=0x7f060005;
         public static final int hello_world=0x7f060001;
