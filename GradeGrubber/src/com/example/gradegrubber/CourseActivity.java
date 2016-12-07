@@ -75,6 +75,7 @@ public class CourseActivity extends Activity implements OnClickListener {
 		// If add button was clicked use transactions.add to add to a transaction
 			if (buttonAddAssignment.getText().equals("Add")){
 				assingment.addAssignment(newAssignment);
+				
 			}
 		}
 	}

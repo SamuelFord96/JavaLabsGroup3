@@ -9,10 +9,10 @@ import java.util.List;
  * 
  */
 public class Assignment {
-	private String AssignmentName;
+	private String assignmentName;
 	private double scoreAchieved;
 	private double maxPoints;
-	private double extraCredit;
+	// private double extraCredit; FIXME May not add in 
 	
 	public ArrayList<Assignment> Assignment; 
 	
@@ -28,18 +28,18 @@ public class Assignment {
 	 */
 	public Assignment(String assignmentName, double scoreAchieved, double maxPoints) {
 		super();
-		AssignmentName = assignmentName;
+		this.assignmentName = assignmentName;
 		this.scoreAchieved = scoreAchieved;
 		this.maxPoints = maxPoints;
-		this.extraCredit = extraCredit;
+		// this.extraCredit = extraCredit; FIXME may not add this in
 		this.Assignment = new ArrayList<Assignment>();
 		
 	}
 	public String getAssignmentName() {
-		return AssignmentName;
+		return assignmentName;
 	}
 	public void setAssignmentName(String assignmentName) {
-		AssignmentName = assignmentName;
+		assignmentName = assignmentName;
 	}
 	public double getScoreAchieved() {
 		return scoreAchieved;

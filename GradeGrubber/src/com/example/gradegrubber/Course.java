@@ -1,6 +1,7 @@
 package com.example.gradegrubber;
 
 public class Course {
+	
 
 	private String cname;
 
