@@ -27,8 +27,6 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		myself = new Student("Whoever");
-		myself.addCourse(new Course("MIS4800"));
-		myself.addCourse(new Course("MIS3150"));
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
