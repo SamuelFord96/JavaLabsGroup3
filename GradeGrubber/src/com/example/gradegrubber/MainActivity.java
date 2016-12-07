@@ -84,7 +84,8 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 		// TODO Auto-generated method stub
 		Course curcourse = myself.getCourses().get(itemposition);
 		tappedposition = itemposition;
-		Intent courseActivity = new Intent(MainActivity.this, Course.class);
+		Intent courseActivity = new Intent(MainActivity.this, CourseActivity.class);
+		courseActivity.putExtra("Course1", curcourse.getCname());
 		startActivity (courseActivity);
 	}
 }
