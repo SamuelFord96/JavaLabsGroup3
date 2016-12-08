@@ -26,9 +26,9 @@ public class CourseActivity extends Activity implements OnClickListener {
 	private List<Assignment> myAssignments;
 	private int tappedposition = -1;
 	
-	ArrayAdapter<Assignment> adapter;
-	Course courseClicked;
-	
+	ArrayAdapter<Assignment> assignmentAdapter;
+	//Course courseClicked;
+	Course course1;
 	//Declare button
 	Button buttonAddAssignment;
 	//Declare Edit Texts
@@ -57,7 +57,8 @@ public class CourseActivity extends Activity implements OnClickListener {
 		tvCourseTitle = (TextView) findViewById(R.id.tvCourseTitle);
 		//Set their value
 		lstAssignmentType1 = (ListView) findViewById(R.id.lstAssignmentType1);
-		
+		//assignmentAdapter = new ArrayAdapter<Assignment>(this, android.R.layout.simple_expandable_list_item_2, 
+		//course1.getAssignment());
 		buttonAddAssignment.setOnClickListener(this);
 		
 	}
@@ -70,7 +71,7 @@ public class CourseActivity extends Activity implements OnClickListener {
 			Assignment newAssignment = new Assignment(addAssingmentName.getText().toString(), pointsAchievedDouble, maxPointsDouble);
 		// If add button was clicked use transactions.add to add to a transaction
 			if (buttonAddAssignment.getText().equals("Add")){
-				courseClicked.addAssignment(newAssignment);
+				course1.addAssignment(newAssignment);
 				
 				
 			}
