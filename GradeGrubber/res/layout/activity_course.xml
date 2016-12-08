@@ -33,7 +33,8 @@
         android:layout_alignBottom="@+id/pointsAchieved"
         android:layout_alignRight="@+id/addAssingmentName"
         android:ems="10"
-        android:hint="@string/maxPoints" >
+        android:hint="@string/maxPoints"
+        android:inputType="number" >
 
         <requestFocus />
     </EditText>
@@ -46,7 +47,8 @@
         android:layout_below="@+id/addAssingmentName"
         android:layout_marginTop="28dp"
         android:ems="10"
-        android:hint="@string/actualPointsAchieved" />
+        android:hint="@string/actualPointsAchieved"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/addAssingmentName"

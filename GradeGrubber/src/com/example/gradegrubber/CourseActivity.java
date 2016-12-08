@@ -25,8 +25,9 @@ public class CourseActivity extends Activity implements OnClickListener {
 	private String courseName;
 	private List<Assignment> myAssignments;
 	private int tappedposition = -1;
+	
 	ArrayAdapter<Assignment> adapter;
-	Assignment assingment;
+	Course courseClicked;
 	
 	//Declare button
 	Button buttonAddAssignment;
@@ -74,7 +75,8 @@ public class CourseActivity extends Activity implements OnClickListener {
 			Assignment newAssignment = new Assignment(addAssingmentName.getText().toString(), pointsAchievedDouble, maxPointsDouble);
 		// If add button was clicked use transactions.add to add to a transaction
 			if (buttonAddAssignment.getText().equals("Add")){
-				assingment.addAssignment(newAssignment);
+				courseClicked.addAssignment(newAssignment);
+				
 				
 			}
 		}

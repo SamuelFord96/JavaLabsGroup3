@@ -1,8 +1,16 @@
 package com.example.gradegrubber;
 
+import java.util.ArrayList;
+
 public class Course {
 	
-
+	public ArrayList<Assignment> getAssignment() {
+		return Assignment;
+	}
+	
+	public ArrayList<Assignment> Assignment; 
+	
+	
 	private String cname;
 
 	/**
@@ -34,5 +42,8 @@ public class Course {
 	public String toString() {
 		return "Course [cname=" + cname + "]";
 	}
-
+	public void addAssignment(Assignment newAssign) {
+		Assignment.add(newAssign);
+		
+	}
 }

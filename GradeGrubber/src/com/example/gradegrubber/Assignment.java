@@ -14,13 +14,6 @@ public class Assignment {
 	private double maxPoints;
 	// private double extraCredit; FIXME May not add in 
 	
-	public ArrayList<Assignment> Assignment; 
-	
-	
-	public ArrayList<Assignment> getAssignment() {
-		return Assignment;
-	}
-	
 	/**
 	 * @param assignmentName
 	 * @param scoreAchieved
@@ -31,10 +24,10 @@ public class Assignment {
 		this.assignmentName = assignmentName;
 		this.scoreAchieved = scoreAchieved;
 		this.maxPoints = maxPoints;
-		// this.extraCredit = extraCredit; FIXME may not add this in
-		this.Assignment = new ArrayList<Assignment>();
-		
+		// this.extraCredit = extraCredit; FIXME may not add this in		
 	}
+	
+	
 	public String getAssignmentName() {
 		return assignmentName;
 	}
@@ -56,10 +49,6 @@ public class Assignment {
 	
 	public double calculateGrade(double maxPoints, double scoreAchieved, double extraCredit){
 		return (scoreAchieved + extraCredit)/maxPoints;
-		
-	}
-	public void addAssignment(Assignment newAssign) {
-		Assignment.add(newAssign);
 		
 	}
 
