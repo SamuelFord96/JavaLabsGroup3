@@ -61,11 +61,6 @@ public class CourseActivity extends Activity implements OnClickListener {
 		buttonAddAssignment.setOnClickListener(this);
 		
 	}
-
-	
-	public void addAssignment(){
-		
-	}
 	
 	public void onClick(View v) {
 		switch (v.getId()){
