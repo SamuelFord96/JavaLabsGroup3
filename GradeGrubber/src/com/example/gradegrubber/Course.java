@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Course {
 	
-	public ArrayList<Assignment> getAssignment() {
+	public ArrayList<Assignment> getAssignments() {
 		return Assignments;
 	}
 	
@@ -40,7 +40,7 @@ public class Course {
 	 */
 	@Override
 	public String toString() {
-		return "Course [cname=" + cname + "]";
+		return cname;
 	}
 	public void addAssignment(Assignment newAssign) {
 		Assignments.add(newAssign);

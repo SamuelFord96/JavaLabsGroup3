@@ -13,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,9 +23,8 @@ import android.widget.TextView;
 
 
 
-public class CourseActivity extends Activity implements OnClickListener {
+public class CourseActivity extends Activity implements OnClickListener, OnItemClickListener {
 	private String courseName;
-	private List<Assignment> myAssignments;
 	private int tappedposition = -1;
 	
 	ArrayAdapter<Assignment> assignmentAdapter;
@@ -43,9 +44,9 @@ public class CourseActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_course);
 		Intent sourceIntent = getIntent();
-		
+		course1 = new Course(courseName);
 		this.courseName = sourceIntent.getStringExtra("Course1");
-		this.myAssignments = new ArrayList<Assignment>();
+		//this.myAssignments = new ArrayList<Assignment>();
 		
 		buttonAddAssignment = (Button) findViewById(R.id.buttonAddAssingment);
 		//Set their value
@@ -57,7 +58,8 @@ public class CourseActivity extends Activity implements OnClickListener {
 		tvCourseTitle = (TextView) findViewById(R.id.tvCourseTitle);
 		//Set their value
 		lstAssignmentType1 = (ListView) findViewById(R.id.lstAssignmentType1);
-		//assignmentAdapter = new ArrayAdapter<Assignment>(this, android.R.layout.simple_expandable_list_item_2, 
+		assignmentAdapter = new ArrayAdapter<Assignment>(this, android.R.layout.simple_list_item_2, course1.getAssignments());
+		lstAssignmentType1.setOnItemClickListener(this);
 		//course1.getAssignment());
 		buttonAddAssignment.setOnClickListener(this);
 		
@@ -70,11 +72,10 @@ public class CourseActivity extends Activity implements OnClickListener {
 			double maxPointsDouble = Double.parseDouble(maxPoints.getText().toString());
 			Assignment newAssignment = new Assignment(addAssingmentName.getText().toString(), pointsAchievedDouble, maxPointsDouble);
 		// If add button was clicked use transactions.add to add to a transaction
-			if (buttonAddAssignment.getText().equals("Add")){
+			// (buttonAddAssignment.getText().equals("Add")){
 				course1.addAssignment(newAssignment);
 				
 			}
-		}
 	}
 
 	@Override
@@ -96,5 +97,11 @@ public class CourseActivity extends Activity implements OnClickListener {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -1,5 +1,6 @@
 package com.example.gradegrubber;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import android.app.Activity;
@@ -18,7 +19,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class MainActivity extends Activity implements OnClickListener, OnItemClickListener{
+public class MainActivity extends Activity implements OnClickListener, OnItemClickListener, Serializable{
 	Button btnAddCourse, btnDeleteCourse;
 	TextView tvTitleGrubberHubber, tvYourCourses;
 	EditText txtAddCourseName;
@@ -89,7 +90,7 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 		tappedposition = itemposition;
 		Intent courseActivity = new Intent(MainActivity.this, CourseActivity.class);
 		courseActivity.putExtra("courseName", curcourse.getCname());
-		courseActivity.putParcelableArrayListExtra("AssignmentList", (ArrayList<? extends Parcelable>) curcourse.getAssignment());
+		//courseActivity.putExtra("AssignmentList", curcourse.getAssignments());
 		startActivity (courseActivity);
 	}
 }
