@@ -1,8 +1,11 @@
 package com.example.gradegrubber;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -86,6 +89,7 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 		tappedposition = itemposition;
 		Intent courseActivity = new Intent(MainActivity.this, CourseActivity.class);
 		courseActivity.putExtra("courseName", curcourse.getCname());
+		courseActivity.putParcelableArrayListExtra("AssignmentList", (ArrayList<? extends Parcelable>) curcourse.getAssignment());
 		startActivity (courseActivity);
 	}
 }

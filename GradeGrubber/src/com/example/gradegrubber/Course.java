@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public class Course {
 	
 	public ArrayList<Assignment> getAssignment() {
-		return Assignment;
+		return Assignments;
 	}
 	
-	public ArrayList<Assignment> Assignment; 
+	public ArrayList<Assignment> Assignments; 
 	
 	
 	private String cname;
@@ -43,7 +43,7 @@ public class Course {
 		return "Course [cname=" + cname + "]";
 	}
 	public void addAssignment(Assignment newAssign) {
-		Assignment.add(newAssign);
+		Assignments.add(newAssign);
 		
 	}
 }
