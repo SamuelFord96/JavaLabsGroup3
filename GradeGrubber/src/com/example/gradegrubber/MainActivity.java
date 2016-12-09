@@ -89,7 +89,7 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 		Course curcourse = myself.getCourses().get(itemposition);
 		tappedposition = itemposition;
 		Intent courseActivity = new Intent(MainActivity.this, CourseActivity.class);
-		courseActivity.putExtra("courseName", curcourse.getCname());
+		courseActivity.putExtra("CourseName", curcourse.getCname());
 		//courseActivity.putExtra("AssignmentList", curcourse.getAssignments());
 		startActivity (courseActivity);
 	}

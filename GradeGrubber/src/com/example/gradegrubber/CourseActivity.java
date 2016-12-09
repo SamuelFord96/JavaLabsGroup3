@@ -45,7 +45,7 @@ public class CourseActivity extends Activity implements OnClickListener, OnItemC
 		setContentView(R.layout.activity_course);
 		Intent sourceIntent = getIntent();
 		course1 = new Course(courseName);
-		this.courseName = sourceIntent.getStringExtra("Course1");
+		courseName = sourceIntent.getStringExtra("CourseName");
 		//this.myAssignments = new ArrayList<Assignment>();
 		
 		buttonAddAssignment = (Button) findViewById(R.id.buttonAddAssingment);
@@ -62,7 +62,7 @@ public class CourseActivity extends Activity implements OnClickListener, OnItemC
 		lstAssignmentType1.setOnItemClickListener(this);
 		//course1.getAssignment());
 		buttonAddAssignment.setOnClickListener(this);
-		
+		tvCourseTitle.setText(course1.getCname());
 	}
 	
 	public void onClick(View v) {
