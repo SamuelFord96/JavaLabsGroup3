@@ -73,7 +73,6 @@ public class CourseActivity extends Activity implements OnClickListener {
 			if (buttonAddAssignment.getText().equals("Add")){
 				course1.addAssignment(newAssignment);
 				
-				
 			}
 		}
 	}
