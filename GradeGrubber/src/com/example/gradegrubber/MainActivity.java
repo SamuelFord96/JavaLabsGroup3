@@ -20,13 +20,14 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener, OnItemClickListener, Serializable{
-	Button btnAddCourse, btnDeleteCourse;
+	Button btnAddCourse, btnDeleteCourse, btnToNotes;
 	TextView tvTitleGrubberHubber, tvYourCourses;
 	EditText txtAddCourseName;
 	ListView lstYourCourses;
 	
 	ArrayAdapter<Course> courseAdapter;
 	Student myself;
+	public static Course currentCourse;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +41,9 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 		txtAddCourseName = (EditText) findViewById(R.id.txtAddCourseName);
 		
 		btnAddCourse = (Button) findViewById(R.id.btnAddCourse);
+		btnToNotes = (Button) findViewById(R.id.btnToNotes);
 		btnAddCourse.setOnClickListener(this);
-		
+		btnToNotes.setOnClickListener(this);
 		
 		lstYourCourses = (ListView) findViewById(R.id.lstYourCourses);
 		courseAdapter = new ArrayAdapter<Course>(this, android.R.layout.simple_list_item_1,
@@ -79,6 +81,10 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 			Course newCourse = new Course(txtAddCourseName.getText().toString());
 			myself.addCourse(newCourse);
 			break;
+		case R.id.btnToNotes:
+			Intent toNotes = new Intent(MainActivity.this, NoteActivity.class);
+			startActivity (toNotes);
+			break;
 		}
 		courseAdapter.notifyDataSetChanged();
 	}
@@ -90,6 +96,7 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 		tappedposition = itemposition;
 		Intent courseActivity = new Intent(MainActivity.this, CourseActivity.class);
 		courseActivity.putExtra("CourseName", curcourse.getCname());
+		currentCourse = curcourse;
 		//courseActivity.putExtra("AssignmentList", curcourse.getAssignments());
 		startActivity (courseActivity);
 	}

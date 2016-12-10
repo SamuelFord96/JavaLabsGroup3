@@ -44,8 +44,8 @@ public class CourseActivity extends Activity implements OnClickListener, OnItemC
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_course);
 		Intent sourceIntent = getIntent();
-		course1 = new Course(courseName);
-		courseName = sourceIntent.getStringExtra("CourseName");
+		course1 = MainActivity.currentCourse;
+		//courseName = sourceIntent.getStringExtra("CourseName");
 		//this.myAssignments = new ArrayList<Assignment>();
 		
 		buttonAddAssignment = (Button) findViewById(R.id.buttonAddAssingment);

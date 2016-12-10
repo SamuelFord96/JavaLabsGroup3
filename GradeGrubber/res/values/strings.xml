@@ -18,5 +18,10 @@
     <string name="addCourse">Add</string>
     <string name="btnDelete">Delete</string>
     <string name="bntUpdate">Update</string>
+    <string name="title_activity_note">NoteActivity</string>
+    <string name="yournotes">Your Notes</string>
+    <string name="quicknotes">QuickNotes</string>
+    <string name="AddNote">Add Note</string>
+    <string name="Notes1">Notes</string>
 
 </resources>

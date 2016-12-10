@@ -57,4 +57,14 @@
         <requestFocus />
     </EditText>
 
+    <Button
+        android:id="@+id/btnToNotes"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/btnAddCourse"
+        android:layout_alignRight="@+id/lstYourCourses"
+        android:layout_alignTop="@id/btnAddCourse"
+        android:text="@string/Notes1" />
+
 </RelativeLayout>

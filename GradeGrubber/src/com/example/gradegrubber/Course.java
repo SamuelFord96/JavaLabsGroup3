@@ -33,6 +33,7 @@ public class Course {
 	public Course(String cname) {
 		super();
 		this.cname = cname;
+		this.Assignments = new ArrayList<Assignment>();
 	}
 
 	/* (non-Javadoc)

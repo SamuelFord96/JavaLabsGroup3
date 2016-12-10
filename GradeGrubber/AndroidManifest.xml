@@ -30,6 +30,10 @@
             android:name=".CourseActivity"
             android:label="@string/title_activity_course" >
         </activity>
+        <activity
+            android:name=".NoteActivity"
+            android:label="@string/title_activity_note" >
+        </activity>
     </application>
 
 </manifest>
