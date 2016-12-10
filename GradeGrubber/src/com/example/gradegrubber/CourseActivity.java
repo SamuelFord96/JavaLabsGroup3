@@ -58,11 +58,12 @@ public class CourseActivity extends Activity implements OnClickListener, OnItemC
 		tvCourseTitle = (TextView) findViewById(R.id.tvCourseTitle);
 		//Set their value
 		lstAssignmentType1 = (ListView) findViewById(R.id.lstAssignmentType1);
-		assignmentAdapter = new ArrayAdapter<Assignment>(this, android.R.layout.simple_list_item_2, course1.getAssignments());
+		assignmentAdapter = new ArrayAdapter<Assignment>(this, android.R.layout.simple_list_item_1, course1.getAssignments());
 		lstAssignmentType1.setOnItemClickListener(this);
 		//course1.getAssignment());
 		buttonAddAssignment.setOnClickListener(this);
 		tvCourseTitle.setText(course1.getCname());
+		lstAssignmentType1.setAdapter(assignmentAdapter);
 	}
 	
 	public void onClick(View v) {
@@ -74,7 +75,7 @@ public class CourseActivity extends Activity implements OnClickListener, OnItemC
 		// If add button was clicked use transactions.add to add to a transaction
 			// (buttonAddAssignment.getText().equals("Add")){
 				course1.addAssignment(newAssignment);
-				
+				break;
 			}
 	}
 

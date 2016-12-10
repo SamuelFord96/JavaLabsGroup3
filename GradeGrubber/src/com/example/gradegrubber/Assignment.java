@@ -49,7 +49,9 @@ public class Assignment {
 	
 	public double calculateGrade(double maxPoints, double scoreAchieved, double extraCredit){
 		return (scoreAchieved + extraCredit)/maxPoints;
-		
+	
 	}
-
+	public String toString(){
+		return assignmentName + "\n" + scoreAchieved + "/" + maxPoints;
+	}
 }
