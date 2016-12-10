@@ -17,7 +17,7 @@ import android.widget.TextView;
 public class NoteActivity extends Activity implements OnClickListener {
 	Button btnAddNote;
 	TextView tvYourNotes;
-	EditText txtAddNotes;
+	EditText txtAddNote;
 	ListView lstNotes;
 	ArrayAdapter<QuickNotes> noteAdapter;
 	QuickNoteBook myNoteBook;
@@ -25,16 +25,15 @@ public class NoteActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_note);
 		myNoteBook = new QuickNoteBook();
 		tvYourNotes = (TextView) findViewById(R.id.tvYourNotes);
-		txtAddNotes = (EditText) findViewById(R.id.txtAddNote);
+		txtAddNote = (EditText) findViewById(R.id.txtAddNote);
 		btnAddNote = (Button) findViewById(R.id.btnAddNote);
 		lstNotes = (ListView) findViewById(R.id.lstNotes);
-		//btnAddNote.setOnClickListener(this);
-		noteAdapter = new ArrayAdapter<QuickNotes>(this, android.R.layout.simple_list_item_1,
-				myNoteBook.getNotes());
-		//lstNotes.setAdapter(noteAdapter);
-		setContentView(R.layout.activity_note);
+		noteAdapter = new ArrayAdapter<QuickNotes>(this, android.R.layout.simple_list_item_1, myNoteBook.getNotes());
+		lstNotes.setAdapter(noteAdapter);
+		btnAddNote.setOnClickListener(this);
 	}
 
 	@Override
@@ -60,12 +59,13 @@ public class NoteActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
+		// TODO Auto-generated method stub
 		switch (v.getId()){
 		case R.id.btnAddNote:
-			QuickNotes newNote = new QuickNotes(txtAddNotes.getText().toString());
+			QuickNotes newNote = new QuickNotes(txtAddNote.getText().toString());
 			myNoteBook.AddNote(newNote);
 			break;
-		// TODO Auto-generated method stub
-		
-	}}
+		}
+	}
+
 }
