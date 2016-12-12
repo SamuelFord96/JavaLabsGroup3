@@ -23,5 +23,7 @@
     <string name="quicknotes">QuickNotes</string>
     <string name="AddNote">Add Note</string>
     <string name="Notes1">Notes</string>
+    <string name="btnUpdateCourse">Update</string>
+    <string name="btnDeleteCourse">Delete</string>
 
 </resources>

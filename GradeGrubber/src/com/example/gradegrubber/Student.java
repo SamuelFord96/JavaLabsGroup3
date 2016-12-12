@@ -13,6 +13,7 @@ import java.util.List;
 public class Student {
 	private String myName;
 	public ArrayList<Course> myCourses;
+	
 	/**
 	 * @param myName
 	 */
@@ -21,15 +22,19 @@ public class Student {
 		myName = myName;
 		this.myCourses = new ArrayList<Course>();
 	}
+	
 	public void addCourse(Course newCourse){
 		myCourses.add(newCourse);
 	}
+	
 	public void deleteCourse(int positionOfCourse){
 		myCourses.remove(positionOfCourse);
 	}
-	public void updateCourse(int positionOfCourse, Course newCourse){
-		myCourses.set(positionOfCourse, newCourse);
+	
+	public void updateCourse(int positionOfCourse, String string){
+		myCourses.set(positionOfCourse, new Course(string));
 	}
+	
 	/**
 	 * @return the myName
 	 */

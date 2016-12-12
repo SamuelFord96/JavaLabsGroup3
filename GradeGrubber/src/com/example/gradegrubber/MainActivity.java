@@ -45,8 +45,11 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 		btnToNotes = (Button) findViewById(R.id.btnToNotes);
 		btnDeleteCourse = (Button) findViewById(R.id.btnDeleteCourse);
 		btnUpdateCourse = (Button) findViewById(R.id.btnUpdateCourse);
+		
 		btnAddCourse.setOnClickListener(this);
 		btnToNotes.setOnClickListener(this);
+		btnDeleteCourse.setOnClickListener(this);
+		btnUpdateCourse.setOnClickListener(this);
 		
 		
 		lstYourCourses = (ListView) findViewById(R.id.lstYourCourses);
@@ -86,7 +89,26 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 		case R.id.btnAddCourse:
 			Course newCourse = new Course(txtAddCourseName.getText().toString());
 			myself.addCourse(newCourse);
+			clearText();
+			
 			break;
+		case R.id.btnDeleteCourse:
+			if (checkFields()) break;
+			if(tappedposition < 0) return;
+			
+			myself.deleteCourse(tappedposition);
+			clearText();
+			reverseInvisibility();
+			break;
+			
+		case R.id.btnUpdateCourse:
+			if (checkFields()) break;
+			if(tappedposition < 0) return;
+			myself.updateCourse(tappedposition, txtAddCourseName.getText().toString());
+			clearText();
+			reverseInvisibility();
+			break;
+			
 		case R.id.btnToNotes:
 			Intent toNotes = new Intent(MainActivity.this, NoteActivity.class);
 			startActivity (toNotes);
@@ -95,15 +117,43 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 		courseAdapter.notifyDataSetChanged();
 	}
 	
-	// FIXME Doesnt work quite yet. Not sure why. but, no crashing
+	private void setInvisibility(){
+		btnAddCourse.setVisibility(android.view.View.INVISIBLE);
+		btnToNotes.setVisibility(android.view.View.INVISIBLE);
+		btnDeleteCourse.setVisibility(android.view.View.VISIBLE);
+		btnUpdateCourse.setVisibility(android.view.View.VISIBLE);
+	}
+	
+	private void reverseInvisibility(){
+		btnAddCourse.setVisibility(android.view.View.VISIBLE);
+		btnToNotes.setVisibility(android.view.View.VISIBLE);
+		btnUpdateCourse.setVisibility(android.view.View.INVISIBLE);
+		btnDeleteCourse.setVisibility(android.view.View.INVISIBLE);
+		
+	}
+	
+	private void clearText() {
+		txtAddCourseName.setText("");
+	}
+	
+	private boolean checkFields(){
+		if (txtAddCourseName.getText().toString().equals("")) {
+			return true;
+		}
+		return false;
+	}
+	
+	
 	public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
 		// TODO Auto-generated method stub
 		Course curcourse = myself.getCourses().get(position);
 		txtAddCourseName.setText(curcourse.getCname().toString());
 		tappedposition = position;
+		setInvisibility();
+		
+		
 		return true;
 	}
-
 	@Override
 	public void onItemClick(AdapterView<?> listview, View itemview, int itemposition, long itemid) {
 		// TODO Auto-generated method stub

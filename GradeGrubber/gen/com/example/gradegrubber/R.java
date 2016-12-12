@@ -31,9 +31,9 @@ public final class R {
         public static final int btnAddNote=0x7f090012;
         public static final int btnDelete=0x7f090006;
         public static final int btnDeleteCourse=0x7f09000f;
-        public static final int btnToNotes=0x7f09000d;
+        public static final int btnToNotes=0x7f09000e;
         public static final int btnUpdate=0x7f090007;
-        public static final int btnUpdateCourse=0x7f09000e;
+        public static final int btnUpdateCourse=0x7f09000d;
         public static final int buttonAddAssingment=0x7f090001;
         public static final int lstAssignmentType1=0x7f090000;
         public static final int lstNotes=0x7f090013;
@@ -69,6 +69,8 @@ public final class R {
         public static final int bntUpdate=0x7f060010;
         public static final int btnAddAssingment=0x7f06000c;
         public static final int btnDelete=0x7f06000f;
+        public static final int btnDeleteCourse=0x7f060017;
+        public static final int btnUpdateCourse=0x7f060016;
         public static final int deleteCourse=0x7f06000d;
         public static final int gradeglow=0x7f060005;
         public static final int hello_world=0x7f060001;
