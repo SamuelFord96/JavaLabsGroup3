@@ -21,7 +21,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener, OnItemClickListener, OnItemLongClickListener, Serializable{
-	Button btnAddCourse, btnDeleteCourse, btnToNotes;
+	Button btnAddCourse, btnDeleteCourse, btnToNotes, btnUpdateCourse;
 	TextView tvTitleGrubberHubber, tvYourCourses;
 	EditText txtAddCourseName;
 	ListView lstYourCourses;
@@ -43,8 +43,11 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 		
 		btnAddCourse = (Button) findViewById(R.id.btnAddCourse);
 		btnToNotes = (Button) findViewById(R.id.btnToNotes);
+		btnDeleteCourse = (Button) findViewById(R.id.btnDeleteCourse);
+		btnUpdateCourse = (Button) findViewById(R.id.btnUpdateCourse);
 		btnAddCourse.setOnClickListener(this);
 		btnToNotes.setOnClickListener(this);
+		
 		
 		lstYourCourses = (ListView) findViewById(R.id.lstYourCourses);
 		courseAdapter = new ArrayAdapter<Course>(this, android.R.layout.simple_list_item_1,

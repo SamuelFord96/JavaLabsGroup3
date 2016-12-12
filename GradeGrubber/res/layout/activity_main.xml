@@ -67,4 +67,26 @@
         android:layout_alignTop="@id/btnAddCourse"
         android:text="@string/Notes1" />
 
+    <Button
+        android:id="@+id/btnUpdateCourse"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignRight="@id/btnAddCourse"
+        android:layout_below="@id/tvTitleGrubberHubber"
+        android:layout_toRightOf="@id/txtAddCourseName"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/btnDeleteCourse"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/btnAddCourse"
+        android:layout_alignRight="@id/lstYourCourses"
+        android:layout_alignTop="@id/btnAddCourse"
+        android:text="Button" />
+
 </RelativeLayout>
