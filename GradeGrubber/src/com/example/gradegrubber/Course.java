@@ -1,8 +1,10 @@
 package com.example.gradegrubber;
 
 import java.util.ArrayList;
+import android.widget.EditText;
 
 public class Course {
+
 	
 	public ArrayList<Assignment> getAssignments() {
 		return Assignments;
@@ -43,8 +45,21 @@ public class Course {
 	public String toString() {
 		return cname;
 	}
+	
 	public void addAssignment(Assignment newAssign) {
 		Assignments.add(newAssign);
 		
 	}
+
+	public void deleteAssingment(int tappedposition) {
+		Assignments.remove(tappedposition);
+		
+	}
+
+	public void updateAssingment(int tappedposition, String assingmentName, double pointsAchieved, double maxPoints) {
+		Assignments.set(tappedposition, new Assignment(assingmentName, pointsAchieved, maxPoints));
+		
+	}
+	
+
 }

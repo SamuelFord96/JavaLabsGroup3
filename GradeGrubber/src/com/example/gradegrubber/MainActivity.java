@@ -13,13 +13,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class MainActivity extends Activity implements OnClickListener, OnItemClickListener, Serializable{
+public class MainActivity extends Activity implements OnClickListener, OnItemClickListener, OnItemLongClickListener, Serializable{
 	Button btnAddCourse, btnDeleteCourse, btnToNotes;
 	TextView tvTitleGrubberHubber, tvYourCourses;
 	EditText txtAddCourseName;
@@ -49,8 +50,10 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 		courseAdapter = new ArrayAdapter<Course>(this, android.R.layout.simple_list_item_1,
 				myself.getCourses());
 		lstYourCourses.setAdapter(courseAdapter);
+		
 		//btnAddCourse.setOnClickListener(this);
 		lstYourCourses.setOnItemClickListener(this);
+		lstYourCourses.setOnItemLongClickListener(this);
 		
 	}
 	private int tappedposition = -1;
@@ -87,6 +90,15 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 			break;
 		}
 		courseAdapter.notifyDataSetChanged();
+	}
+	
+	// FIXME Doesnt work quite yet. Not sure why. but, no crashing
+	public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+		// TODO Auto-generated method stub
+		Course curcourse = myself.getCourses().get(position);
+		txtAddCourseName.setText(curcourse.getCname().toString());
+		tappedposition = position;
+		return true;
 	}
 
 	@Override

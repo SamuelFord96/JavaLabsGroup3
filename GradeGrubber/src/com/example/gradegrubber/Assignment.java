@@ -1,5 +1,6 @@
 package com.example.gradegrubber;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,6 +53,8 @@ public class Assignment {
 	
 	}
 	public String toString(){
-		return assignmentName + "\n" + scoreAchieved + "/" + maxPoints;
+		DecimalFormat df = new DecimalFormat("#.##");
+		String formattedScore = df.format((scoreAchieved/maxPoints)*100);
+		return assignmentName + "\n" + scoreAchieved + "/" + maxPoints + "\n" + formattedScore +"%";
 	}
 }
