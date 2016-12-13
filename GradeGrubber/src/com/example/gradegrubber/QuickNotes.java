@@ -32,6 +32,7 @@ public QuickNotes(String textBody) {
 	this.textBody = textBody;
 }
 
+@Override
 public String toString(){
 	return textBody;
 }

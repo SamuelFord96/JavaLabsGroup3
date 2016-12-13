@@ -1,12 +1,11 @@
 package com.example.gradegrubber;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import com.example.gradegrubber.R;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -144,14 +143,14 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 	}
 	
 	
+	@Override
 	public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
 		// TODO Auto-generated method stub
 		Course curcourse = myself.getCourses().get(position);
 		txtAddCourseName.setText(curcourse.getCname().toString());
 		tappedposition = position;
 		setInvisibility();
-		
-		
+				
 		return true;
 	}
 	@Override

@@ -44,4 +44,26 @@
 
     </ListView>
 
+    <Button
+        android:id="@+id/btnUpdateNoteReal"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btnAddNote"
+        android:layout_alignLeft="@+id/btnAddNote"
+        android:layout_alignRight="@+id/btnAddNote"
+        android:layout_alignTop="@+id/txtAddNote"
+        android:text="@string/btnUpdateNote"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/btnDeleteNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btnAddNote"
+        android:layout_alignRight="@+id/btnAddNote"
+        android:layout_alignTop="@+id/txtAddNote"
+        android:text="@string/btnDeleteNote"
+        android:visibility="invisible" />
+
 </RelativeLayout>

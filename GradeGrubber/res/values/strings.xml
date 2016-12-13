@@ -25,5 +25,10 @@
     <string name="Notes1">Notes</string>
     <string name="btnUpdateCourse">Update</string>
     <string name="btnDeleteCourse">Delete</string>
+    <string name="btnUpdateNote">Update</string>
+    <string name="btnDeleteNote">Delete</string>
+    <string name="grubberHubberBlank">"    "</string>
+    <string name="grubberHubberBlank13">"              "</string>
+    <string name="grubberHubberBlankReal">"                            "</string>
 
 </resources>

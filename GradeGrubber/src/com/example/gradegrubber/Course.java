@@ -1,7 +1,6 @@
 package com.example.gradegrubber;
 
 import java.util.ArrayList;
-import android.widget.EditText;
 
 public class Course {
 

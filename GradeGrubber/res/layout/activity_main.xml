@@ -9,16 +9,6 @@
     tools:context="com.example.gradegrubber.MainActivity" >
 
     <TextView
-        android:id="@+id/tvTitleGrubberHubber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentStart="false"
-        android:layout_centerHorizontal="true"
-        android:text="@string/titleGrubberHubber"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
         android:id="@+id/tvYourCourses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/btnUpdateCourse"
-        android:layout_below="@id/tvTitleGrubberHubber"
+        android:layout_below="@+id/tvTitleGrubberHubber"
         android:layout_toRightOf="@id/txtAddCourseName"
         android:text="@string/addCourse" />
 
@@ -92,5 +82,25 @@
         android:layout_toRightOf="@+id/tvTitleGrubberHubber"
         android:text="@string/btnDeleteCourse" 
         android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tvTitleGrubberHubber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="67dp"
+        android:text="@string/grubberHubberBlankReal"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnDeleteCourse"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/realgradegrubbrganner" />
 
 </RelativeLayout>

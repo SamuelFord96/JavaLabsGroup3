@@ -1,9 +1,5 @@
 package com.example.gradegrubber;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import com.example.gradegrubber.R;
 
 import android.app.Activity;
@@ -75,6 +71,7 @@ public class CourseActivity extends Activity implements OnClickListener, OnItemC
 		clearText();
 	}
 	
+	@Override
 	public void onClick(View v) {
 		switch (v.getId()){
 		case R.id.buttonAddAssingment:

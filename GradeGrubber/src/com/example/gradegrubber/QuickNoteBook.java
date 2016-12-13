@@ -35,4 +35,13 @@ public ArrayList<QuickNotes> getNotes() {
 public void setNotes(ArrayList<QuickNotes> notes) {
 	Notes = notes;
 }
+public void deleteNotes(int tappedposition) {
+	// TODO Auto-generated method stub
+	Notes.remove(tappedposition);
+}
+public void updateNotes(int tappedposition, String note) {
+	// TODO Auto-generated method stub
+	Notes.set(tappedposition, new QuickNotes(note));
+	
+}
 }

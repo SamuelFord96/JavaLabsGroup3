@@ -1,8 +1,6 @@
 package com.example.gradegrubber;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.List;
 
 
 /* This is a class that we will use to keep track of all the assingments that students add, as well as the points that each assingment has
@@ -52,6 +50,7 @@ public class Assignment {
 		return (scoreAchieved + extraCredit)/maxPoints;
 	
 	}
+	@Override
 	public String toString(){
 		DecimalFormat df = new DecimalFormat("#.##");
 		String formattedScore = df.format((scoreAchieved/maxPoints)*100);
