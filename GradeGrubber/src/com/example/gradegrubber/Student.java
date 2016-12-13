@@ -22,16 +22,19 @@ public class Student {
 		this.myCourses = new ArrayList<Course>();
 	}
 	
+	//add a new item to the myCourse array
 	public void addCourse(Course newCourse){
 		myCourses.add(newCourse);
 	}
 	
+	// makes an item in the course deleteable
 	public void deleteCourse(int positionOfCourse){
 		myCourses.remove(positionOfCourse);
 	}
 	
-	public void updateCourse(int positionOfCourse, String string){
-		myCourses.set(positionOfCourse, new Course(string));
+	// makes an item in the course udpateable
+	public void updateCourse(int positionOfCourse, String course){
+		myCourses.set(positionOfCourse, new Course(course));
 	}
 	
 	/**

@@ -3,6 +3,8 @@ package com.example.gradegrubber;
 public class Developer_Notes {
 	/*This is the location where we can make notes to each other that go deeper than comments inside the code. 
 	 * 		Make sure you say who you are, so we know who said what
+	 * 
+	 * These are all of our hopes and dreams. But, we only had enough time to make it work, because of a handfull of unforcene problems
 	 *
 	 *Must have features of the app:
 	 *	1) Calculation of each assignment

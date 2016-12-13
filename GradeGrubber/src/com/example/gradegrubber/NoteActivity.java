@@ -72,7 +72,6 @@ public class NoteActivity extends Activity implements OnClickListener, OnItemLon
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
 		switch (v.getId()){
 		case R.id.btnAddNote:
 			if (checkFields()) break;
@@ -100,11 +99,12 @@ public class NoteActivity extends Activity implements OnClickListener, OnItemLon
 		}
 	}
 	
+	//clears the text in the text box
 	private void clearText() {
 		txtAddNote.setText("");
 	}
 	
-	
+	//boolean that checks to see if text box is empty
 	private boolean checkFields(){
 		if (txtAddNote.getText().toString().equals("")) {
 			return true;
@@ -113,11 +113,14 @@ public class NoteActivity extends Activity implements OnClickListener, OnItemLon
 	}
 	
 	@Override
+	// makes the list long clickable to delete each tiem
 	public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-		// TODO Auto-generated method stub
+		//gets note from position that was long clicked
 		QuickNotes longNote = myNoteBook.getNotes().get(position);
+		//puts the note in that position in the text box
 		txtAddNote.setText(longNote.getTextBody().toString());
 		tappedposition = position;
+		//makes add invisible, akes sure update is still invisible and makes delete visible
 		btnAddNote.setVisibility(android.view.View.INVISIBLE);
 		btnUpdateNote.setVisibility(android.view.View.INVISIBLE);
 		btnDeleteNote.setVisibility(android.view.View.VISIBLE);
@@ -125,11 +128,14 @@ public class NoteActivity extends Activity implements OnClickListener, OnItemLon
 	}
 
 	@Override
+	// makes item in the list view clickable to update the item
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		// TODO Auto-generated method stub
+		//gets the item from the clicked position
 		QuickNotes shortNote = myNoteBook.getNotes().get(position);
+		//sets the text in the clicked postiion to the text box
 		txtAddNote.setText(shortNote.getTextBody().toString());
 		tappedposition = position;
+		//makes the add button invisible, makes sure the delete is invisible and the update is visible
 		btnAddNote.setVisibility(android.view.View.INVISIBLE);
 		btnUpdateNote.setVisibility(android.view.View.VISIBLE);
 		btnDeleteNote.setVisibility(android.view.View.INVISIBLE);

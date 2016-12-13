@@ -83,7 +83,6 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
 		switch (v.getId()){
 		case R.id.btnAddCourse:
 			Course newCourse = new Course(txtAddCourseName.getText().toString());
@@ -115,7 +114,7 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 		}
 		courseAdapter.notifyDataSetChanged();
 	}
-	
+	//method that makes the add and notes button invisible and the delete and update method visible 
 	private void setInvisibility(){
 		btnAddCourse.setVisibility(android.view.View.INVISIBLE);
 		btnToNotes.setVisibility(android.view.View.INVISIBLE);
@@ -123,6 +122,7 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 		btnUpdateCourse.setVisibility(android.view.View.VISIBLE);
 	}
 	
+	//method that makes the add and notes button visible and the delete and update method invisible 
 	private void reverseInvisibility(){
 		btnAddCourse.setVisibility(android.view.View.VISIBLE);
 		btnToNotes.setVisibility(android.view.View.VISIBLE);
@@ -131,10 +131,12 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 		
 	}
 	
+	// clears the text in the text box
 	private void clearText() {
 		txtAddCourseName.setText("");
 	}
 	
+	//boolean method that checks the fields to see if they are blank or not 
 	private boolean checkFields(){
 		if (txtAddCourseName.getText().toString().equals("")) {
 			return true;
@@ -144,24 +146,26 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 	
 	
 	@Override
+	//boolean long item click to be able to edit the list in the view
 	public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-		// TODO Auto-generated method stub
 		Course curcourse = myself.getCourses().get(position);
+		//sets the text in the text box to the item that was selected
 		txtAddCourseName.setText(curcourse.getCname().toString());
 		tappedposition = position;
+		// changes the add and notes button to update and delete
 		setInvisibility();
-				
 		return true;
 	}
+	
 	@Override
+	// makes each item of the list view clickable and on click sends user to the course activity
 	public void onItemClick(AdapterView<?> listview, View itemview, int itemposition, long itemid) {
-		// TODO Auto-generated method stub
+		//gets the item position of the item in the array of the list
 		Course curcourse = myself.getCourses().get(itemposition);
 		tappedposition = itemposition;
 		Intent courseActivity = new Intent(MainActivity.this, CourseActivity.class);
 		courseActivity.putExtra("CourseName", curcourse.getCname());
 		currentCourse = curcourse;
-		//courseActivity.putExtra("AssignmentList", curcourse.getAssignments());
 		startActivity (courseActivity);
 	}
 }

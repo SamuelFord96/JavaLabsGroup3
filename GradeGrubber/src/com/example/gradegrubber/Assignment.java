@@ -8,6 +8,7 @@ import java.text.DecimalFormat;
  * 
  */
 public class Assignment {
+	//Member variables declared
 	private String assignmentName;
 	private double scoreAchieved;
 	private double maxPoints;
@@ -22,35 +23,35 @@ public class Assignment {
 		super();
 		this.assignmentName = assignmentName;
 		this.scoreAchieved = scoreAchieved;
-		this.maxPoints = maxPoints;
-		// this.extraCredit = extraCredit; FIXME may not add this in		
+		this.maxPoints = maxPoints;	
 	}
-	
 	
 	public String getAssignmentName() {
 		return assignmentName;
 	}
+	
 	public void setAssignmentName(String assignmentName) {
 		assignmentName = assignmentName;
 	}
+	
 	public double getScoreAchieved() {
 		return scoreAchieved;
 	}
+	
 	public void setScoreAchieved(double scoreAchieved) {
 		this.scoreAchieved = scoreAchieved;
 	}
+	
 	public double getMaxPoints() {
 		return maxPoints;
 	}
+	
 	public void setMaxPoints(double maxPoints) {
 		this.maxPoints = maxPoints;
 	}
 	
-	public double calculateGrade(double maxPoints, double scoreAchieved, double extraCredit){
-		return (scoreAchieved + extraCredit)/maxPoints;
-	
-	}
 	@Override
+	// The toString for the Course Activity list view. Its got decimal formatting for 2 places and it also has paragraphs to make it look better
 	public String toString(){
 		DecimalFormat df = new DecimalFormat("#.##");
 		String formattedScore = df.format((scoreAchieved/maxPoints)*100);

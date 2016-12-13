@@ -45,16 +45,30 @@ public class Course {
 		return cname;
 	}
 	
+	/**
+	 * @param newAssign
+	 */
+	// adds an assignment to the assignment array
 	public void addAssignment(Assignment newAssign) {
 		Assignments.add(newAssign);
 		
 	}
-
+	
+	/**
+	 * @param tappedposition
+	 */
+	// deletes assignment from the assignment array
 	public void deleteAssingment(int tappedposition) {
 		Assignments.remove(tappedposition);
-		
 	}
-
+	
+	/**
+	 * @param tappedposition
+	 * @param assingmentName
+	 * @param pointsAchieved
+	 * @param maxPoints
+	 */
+	//updates assignment form the assignment array by replacing tapped position with a new assignment
 	public void updateAssingment(int tappedposition, String assingmentName, double pointsAchieved, double maxPoints) {
 		Assignments.set(tappedposition, new Assignment(assingmentName, pointsAchieved, maxPoints));
 		
