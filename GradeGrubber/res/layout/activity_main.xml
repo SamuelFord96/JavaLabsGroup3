@@ -15,7 +15,7 @@
         android:layout_alignParentLeft="false"
         android:layout_below="@+id/txtAddCourseName"
         android:layout_marginTop="10dp"
-        android:text="Medium Text"
+        android:text="@string/yourcourses"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <ListView

@@ -2,6 +2,7 @@ package com.example.gradegrubber;
 
 import java.io.Serializable;
 import com.example.gradegrubber.R;
+import com.example.gradegrubberDb.GradeGrubberDatabase;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -27,12 +28,14 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 	
 	ArrayAdapter<Course> courseAdapter;
 	Student myself;
+	GradeGrubberDatabase mydatabase;
 	public static Course currentCourse;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		myself = new Student("Whoever");
 		super.onCreate(savedInstanceState);
+		myself = new Student("Whoever");
+		mydatabase = new GradeGrubberDatabase(this);
 		setContentView(R.layout.activity_main);
 		
 		tvTitleGrubberHubber = (TextView) findViewById(R.id.tvTitleGrubberHubber);
@@ -60,6 +63,26 @@ public class MainActivity extends Activity implements OnClickListener, OnItemCli
 		lstYourCourses.setOnItemClickListener(this);
 		lstYourCourses.setOnItemLongClickListener(this);
 		
+	}
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onPause()
+	 */
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		mydatabase.saveStudent(myself);
+	}
+
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onResume()
+	 */
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		mydatabase.retrieveStudent(myself);
+		courseAdapter.notifyDataSetChanged();
 	}
 	private int tappedposition = -1;
 	@Override

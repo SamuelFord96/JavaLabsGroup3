@@ -30,5 +30,7 @@
     <string name="grubberHubberBlank">"    "</string>
     <string name="grubberHubberBlank13">"              "</string>
     <string name="grubberHubberBlankReal">"                            "</string>
+    <string name="yourcourses">Your Courses:</string>
+    <string name="cancelbutton">Cancel</string>
 
 </resources>

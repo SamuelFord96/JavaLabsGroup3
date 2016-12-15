@@ -28,10 +28,11 @@ public final class R {
         public static final int realgradegrubbrganner=0x7f020003;
     }
     public static final class id {
-        public static final int action_settings=0x7f090017;
+        public static final int action_settings=0x7f090018;
         public static final int addAssingmentName=0x7f090004;
         public static final int btnAddCourse=0x7f09000b;
         public static final int btnAddNote=0x7f090013;
+        public static final int btnCancel=0x7f090017;
         public static final int btnDelete=0x7f090006;
         public static final int btnDeleteCourse=0x7f09000f;
         public static final int btnDeleteNote=0x7f090016;
@@ -79,6 +80,7 @@ public final class R {
         public static final int btnDeleteNote=0x7f060019;
         public static final int btnUpdateCourse=0x7f060016;
         public static final int btnUpdateNote=0x7f060018;
+        public static final int cancelbutton=0x7f06001e;
         public static final int deleteCourse=0x7f06000d;
         public static final int gradeglow=0x7f060005;
         public static final int grubberHubberBlank=0x7f06001a;
@@ -93,6 +95,7 @@ public final class R {
         public static final int title_activity_note=0x7f060011;
         public static final int title_activity_settings=0x7f060004;
         public static final int yourPoints=0x7f060009;
+        public static final int yourcourses=0x7f06001d;
         public static final int yournotes=0x7f060012;
     }
     public static final class style {

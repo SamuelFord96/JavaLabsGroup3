@@ -18,7 +18,7 @@
 
     <EditText
         android:id="@+id/txtAddNote"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/tvYourNotes"
@@ -30,10 +30,12 @@
     <Button
         android:id="@+id/btnAddNote"
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
+        android:layout_width="65dp"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@id/txtAddNote"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentRight="false"
+        android:layout_alignTop="@id/txtAddNote"
+        android:layout_toRightOf="@id/txtAddNote"
         android:text="@string/AddNote" />
 
     <ListView
@@ -60,10 +62,22 @@
         android:id="@+id/btnDeleteNote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/btnAddNote"
         android:layout_alignBottom="@+id/btnAddNote"
-        android:layout_alignRight="@+id/btnAddNote"
+        android:layout_alignRight="@id/btnAddNote"
         android:layout_alignTop="@+id/txtAddNote"
         android:text="@string/btnDeleteNote"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@id/btnAddNote"
+        android:layout_alignParentRight="false"
+        android:layout_toRightOf="@id/btnAddNote"
+        android:text="@string/cancelbutton"
         android:visibility="invisible" />
 
 </RelativeLayout>

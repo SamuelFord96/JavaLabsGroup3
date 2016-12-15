@@ -1,6 +1,7 @@
 package com.example.gradegrubber;
 
 import com.example.gradegrubber.R;
+//import com.example.gradegrubberDb.GradeGrubberDatabase;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -34,6 +35,7 @@ public class CourseActivity extends Activity implements OnClickListener, OnItemC
 	TextView tvCourseTitle;
 	//Declare List View
 	ListView lstAssignmentType1;
+	//GradeGrubberDatabase mydatabase;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +43,7 @@ public class CourseActivity extends Activity implements OnClickListener, OnItemC
 		setContentView(R.layout.activity_course);
 		Intent sourceIntent = getIntent();
 		course = MainActivity.currentCourse;
-
+		//mydatabase = new GradeGrubberDatabase(this);
 		//set declared buttons above to the find view by id, so theyre clickable
 		buttonAddAssignment = (Button) findViewById(R.id.buttonAddAssingment);
 		btnDelete = (Button) findViewById(R.id.btnDelete); 
@@ -77,6 +79,27 @@ public class CourseActivity extends Activity implements OnClickListener, OnItemC
 		clearText();
 	}
 	
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onPause()
+	 */
+	/*@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		mydatabase.saveCourses(course);
+	}
+
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onResume()
+	 */
+	/*@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		mydatabase.retrieveCourses(course);
+		assignmentAdapter.notifyDataSetChanged();
+	}*/
+
 	@Override
 	// method that can make each button usable and tells the button what to do when pressed
 	public void onClick(View v) {

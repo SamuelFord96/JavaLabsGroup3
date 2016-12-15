@@ -1,6 +1,7 @@
 package com.example.gradegrubber;
 
 import  com.example.gradegrubber.R;
+import com.example.gradegrubberDb.GradeGrubberDatabase;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -18,23 +19,26 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class NoteActivity extends Activity implements OnClickListener, OnItemLongClickListener, OnItemClickListener {
-	Button btnAddNote, btnDeleteNote, btnUpdateNote, btnUpdateNoteReal;
+	Button btnAddNote, btnDeleteNote, btnUpdateNote, btnUpdateNoteReal, btnCancel;
 	TextView tvYourNotes;
 	EditText txtAddNote;
 	ListView lstNotes;
 	ArrayAdapter<QuickNotes> noteAdapter;
 	QuickNoteBook myNoteBook;
+	GradeGrubberDatabase mydatabase;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_note);
 		myNoteBook = new QuickNoteBook();
+		mydatabase = new GradeGrubberDatabase(this);
 		tvYourNotes = (TextView) findViewById(R.id.tvYourNotes);
 		txtAddNote = (EditText) findViewById(R.id.txtAddNote);
 		btnAddNote = (Button) findViewById(R.id.btnAddNote);
 		btnDeleteNote = (Button) findViewById(R.id.btnDeleteNote);
 		btnUpdateNote = (Button) findViewById(R.id.btnUpdateNoteReal);
+		btnCancel = (Button) findViewById(R.id.btnCancel);
 		lstNotes = (ListView) findViewById(R.id.lstNotes);
 		noteAdapter = new ArrayAdapter<QuickNotes>(this, android.R.layout.simple_list_item_1, myNoteBook.getNotes());
 		lstNotes.setAdapter(noteAdapter);
@@ -42,9 +46,31 @@ public class NoteActivity extends Activity implements OnClickListener, OnItemLon
 		btnAddNote.setOnClickListener(this);
 		btnDeleteNote.setOnClickListener(this);
 		btnUpdateNote.setOnClickListener(this);
+		btnCancel.setOnClickListener(this);
 		
 		lstNotes.setOnItemClickListener(this);
 		lstNotes.setOnItemLongClickListener(this);
+	}
+
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onPause()
+	 */
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		mydatabase.saveNotes(myNoteBook);
+	}
+
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onResume()
+	 */
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		mydatabase.retrieveNotes(myNoteBook);
+		noteAdapter.notifyDataSetChanged();
 	}
 
 	private int tappedposition = -1;
@@ -87,6 +113,7 @@ public class NoteActivity extends Activity implements OnClickListener, OnItemLon
 			clearText();
 			btnAddNote.setVisibility(android.view.View.VISIBLE);
 			btnDeleteNote.setVisibility(android.view.View.INVISIBLE);
+			btnCancel.setVisibility(android.view.View.INVISIBLE);
 			break;
 			
 		case R.id.btnUpdateNoteReal:
@@ -97,6 +124,7 @@ public class NoteActivity extends Activity implements OnClickListener, OnItemLon
 			btnAddNote.setVisibility(android.view.View.VISIBLE);
 			btnUpdateNote.setVisibility(android.view.View.INVISIBLE);
 		}
+		noteAdapter.notifyDataSetChanged();
 	}
 	
 	//clears the text in the text box
@@ -124,6 +152,7 @@ public class NoteActivity extends Activity implements OnClickListener, OnItemLon
 		btnAddNote.setVisibility(android.view.View.INVISIBLE);
 		btnUpdateNote.setVisibility(android.view.View.INVISIBLE);
 		btnDeleteNote.setVisibility(android.view.View.VISIBLE);
+		btnCancel.setVisibility(android.view.View.VISIBLE);
 		return true;
 	}
 
@@ -139,6 +168,7 @@ public class NoteActivity extends Activity implements OnClickListener, OnItemLon
 		btnAddNote.setVisibility(android.view.View.INVISIBLE);
 		btnUpdateNote.setVisibility(android.view.View.VISIBLE);
 		btnDeleteNote.setVisibility(android.view.View.INVISIBLE);
+		btnCancel.setVisibility(android.view.View.INVISIBLE);
 	}
 
 }
