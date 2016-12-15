@@ -26,7 +26,6 @@ public class GradeGrubberDatabase extends SQLiteOpenHelper {
 	private final String CREATESQLNOTE = "create table notes(id_integer primary key, textBody varchar(100));";
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		// TODO Auto-generated method stub
 		db.execSQL(CREATESQLSTUDENT);
 		db.execSQL(CREATESQLCOURSE);
 		db.execSQL(CREATESQLNOTE);
@@ -91,14 +90,12 @@ public class GradeGrubberDatabase extends SQLiteOpenHelper {
 	}
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		// TODO Auto-generated method stub
 
 	}
 
 	public GradeGrubberDatabase(Context context) {
 		super(context, DBNAME, null, version);
 		mydatabase = getWritableDatabase();
-		// TODO Auto-generated constructor stub
 	}
 
 }

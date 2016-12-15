@@ -78,7 +78,7 @@ public class CourseActivity extends Activity implements OnClickListener, OnItemC
 		//makes all the text fields "" so that they can be checked to see if theyre blank, to avoid the activity crashing
 		clearText();
 	}
-	
+	//FIXME this database did not work correctly and saves the data from an assignment to each and every instance of Course.
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onPause()
 	 */

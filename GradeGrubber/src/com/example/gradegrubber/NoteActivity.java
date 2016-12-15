@@ -57,7 +57,6 @@ public class NoteActivity extends Activity implements OnClickListener, OnItemLon
 	 */
 	@Override
 	protected void onPause() {
-		// TODO Auto-generated method stub
 		super.onPause();
 		mydatabase.saveNotes(myNoteBook);
 	}
@@ -67,7 +66,6 @@ public class NoteActivity extends Activity implements OnClickListener, OnItemLon
 	 */
 	@Override
 	protected void onResume() {
-		// TODO Auto-generated method stub
 		super.onResume();
 		mydatabase.retrieveNotes(myNoteBook);
 		noteAdapter.notifyDataSetChanged();
@@ -148,7 +146,7 @@ public class NoteActivity extends Activity implements OnClickListener, OnItemLon
 		//puts the note in that position in the text box
 		txtAddNote.setText(longNote.getTextBody().toString());
 		tappedposition = position;
-		//makes add invisible, akes sure update is still invisible and makes delete visible
+		//makes add invisible, makes sure update is still invisible and makes delete visible
 		btnAddNote.setVisibility(android.view.View.INVISIBLE);
 		btnUpdateNote.setVisibility(android.view.View.INVISIBLE);
 		btnDeleteNote.setVisibility(android.view.View.VISIBLE);
